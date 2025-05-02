@@ -1,6 +1,6 @@
--- creates a users table with a country ENUM and unique email.
+-- Create a users table with a country ENUM and unique email
 
-CREATE TABLE IS NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     name VARCHAR(255),
