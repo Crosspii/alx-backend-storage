@@ -1,5 +1,5 @@
--- Creates a stored prodcedure Addbonues that inserts a correction for students
--- also creates the project is it doesn't exist
+-- Creates a stored procedure AddBonus that inserts a correction for a student,
+-- creating the project if it does not exist.
 
 DELIMITER $$
 
@@ -15,7 +15,7 @@ BEGIN
     WHERE name = project_name
     LIMIT 1;
     IF project_id IS NULL THEN
-        INSERT INTO prjoects(name) VALUES (project_name);
+        INSERT INTO projects(name) VALUES (project_name);
         SET project_id = LAST_INSERT_ID();
     END IF;
     INSERT INTO corrections(user_id, project_id, score)
