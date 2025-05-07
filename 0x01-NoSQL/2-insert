@@ -1,0 +1,2 @@
+// inserst a documint in the collection school.
+db.school.insert({ name: "ALX" });
