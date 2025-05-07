@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-""" module provides statistics about nginx logs stored in mongodb.
-"""
+""" module provides statistics about nginx logs stored in mongodb."""
 from pymongo import MongoClient
 
 
 def display_nginx_stats(collection):
-    """ Displays stats of nginx logs. """
+    """Displays stats for Nginx logs."""
     total_logs = collection.count_documents({})
     print(f"{total_logs} logs")
 
@@ -22,7 +21,7 @@ def display_nginx_stats(collection):
 
 
 def main():
-    """ Connects to the mongodb and displays the stats. """
+    """Connects to MongoDB and displays Nginx stats."""
     client = MongoClient("mongodb://127.0.0.1:27017")
     db = client.logs
     display_nginx_stats(db.nginx)
@@ -30,4 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
